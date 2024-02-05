@@ -43,5 +43,6 @@ This section includes the schedule of lectures, assignments due dates, projects 
 # Contact
 For any further questions, please contact us at:
 
-- **Email**: [Insert email here]
-- **Office Hours**: [Insert office hours here]
+- **Email**: [bhattacharya@msoe]
+  - **Office Hours CSC1120-131**: [M W 10:00-11:00 AM, F 12:00-1:00 PM]
+  -   - **Office Hours CSC1120-151**: [T W Thr 2:00-3:00 PM]
