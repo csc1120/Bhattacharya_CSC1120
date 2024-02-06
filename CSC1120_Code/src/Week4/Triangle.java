@@ -1,3 +1,5 @@
+package Week4;
+
 public class Triangle implements Shape{
 
     private double base;

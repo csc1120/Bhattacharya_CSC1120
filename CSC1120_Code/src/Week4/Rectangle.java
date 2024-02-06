@@ -1,3 +1,5 @@
+package Week4;
+
 public class Rectangle implements Shape{
     private double length;
     private double breadth;
@@ -27,22 +29,7 @@ public class Rectangle implements Shape{
         return this.length * this.breadth;
     }
 
-    public double square() {
-        return Math.pow(this.length, 2);
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Rectangle rectangle = (Rectangle) obj;
-        return Double.compare(rectangle.length, length) == 0 &&
-               Double.compare(rectangle.breadth, breadth) == 0;
-    }
 
     @Override
     public String toString() {
