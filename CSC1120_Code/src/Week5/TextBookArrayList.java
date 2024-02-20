@@ -1,5 +1,6 @@
-package Week5.csc1120;
+package Week5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -36,17 +37,26 @@ public class TextBookArrayList<E> {
      * @throws ArrayIndexOutOfBoundsException If index is out of range
      */
     public void add (int index, E anEntry) {
+        // check bounds
         if (index < 0 || index > size) {
             throw new ArrayIndexOutOfBoundsException(index);
         }
+
+        // Make sure there is room
         if (size >= capacity) {
             reallocate();
         }
+
+        // shift data
         for (int i = size; i > index; i--) {
             theData[i] = theData[i-1];
         }
+
+        // insert item
         theData[index] = anEntry;
         size++;
+
+
     }
 
     /**
@@ -99,7 +109,20 @@ public class TextBookArrayList<E> {
         return returnValue;
     }
     // contains method
-    public boolean contains(E anEntry) {
+//    public boolean contains(E anEntry) {
+//        for (int i = 0; i < size; i++) {
+//            if (theData[i].equals(anEntry)) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
+    /**
+     *indexedContains — Iterating through the list using an index (calling get()) to find a match
+     */
+    public boolean indexedContains(E anEntry) {
+        // use get method to iterate through the list
         for (int i = 0; i < size; i++) {
             if (theData[i].equals(anEntry)) {
                 return true;
@@ -107,6 +130,15 @@ public class TextBookArrayList<E> {
         }
         return false;
     }
+        // contains — Determining if a value is in the list using contains()
+    public boolean contains(E anEntry) {
+        return Arrays.asList(theData).contains(anEntry);
+    }
+    // addtoFront — Adding an item to the front of the list
+    public void addtoFront(E anEntry) {
+        add(0, anEntry);
+    }
+
 
     /**
      * Resize the array to the double of its current capacity
@@ -116,29 +148,28 @@ public class TextBookArrayList<E> {
         theData = Arrays.copyOf(theData, capacity);
     }
 
-    public static void main(String[] args) {
-        // Create an arraylist of Integers
-        TextBookArrayList<Integer> intArray = new TextBookArrayList<>();
-        long start = System.nanoTime();
-        for (int i = 0; i < 1000000; i++) {
-            intArray.add(i, i);
+// return the arraylist
+    public ArrayList shuffle() {
+        for (int i = 0; i < size; i++) {
+            int randomIndex = (int) (Math.random() * size);
+            E temp = theData[i];
+            theData[i] = theData[randomIndex];
+            theData[randomIndex] = temp;
         }
-        long end = System.nanoTime();
-        System.out.println("Time taken to add elements to an array: " + (end - start)*1/1000000 + " miliseconds");
-
-    // benchmark data for the following operations:
-    // addToFront — Adding to the front of the arraylist
-
-        start = System.nanoTime();
-        intArray.add(0, 100);
-        end = System.nanoTime();
-        System.out.println("Time taken to add an element to the front of an array: " + (end - start) + " nanoseconds");
-
-        // indexedContains — Iterating through the arraylist using an index (calling get() ) to
-        // find a match
-        start = System.nanoTime();
-        intArray.get(100);
-        end = System.nanoTime();
-        System.out.println("Time taken to get an element from an array: " + (end - start) + " nanoseconds");
+        return new ArrayList(Arrays.asList(theData));
     }
+    // toString method
+    public String toString() {
+        return Arrays.toString(theData);
+    }
+    // indexContains — Iterating through the list using an index (calling get()) to find a match
+    public boolean indexContains(E anEntry) {
+        for (int i = 0; i < size; i++) {
+            if (theData[i].equals(anEntry)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
