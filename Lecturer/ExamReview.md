@@ -14,7 +14,7 @@ Advantages of using MVC:
 - Reusability: The MVC pattern makes it easier to reuse code, because the model, view, and controller can be used in different applications. This can save time and effort when developing new applications.
 - Flexibility: The MVC pattern makes it easier to change the application, because the model, view, and controller can be changed independently of each other. This makes it easier to add new features to the application, or to change existing features.
 
-2. order in which the methods in a J avaFX application  are called?
+2. order in which the methods in a JavaFX application  are called?
 
 The order in which the methods in a JavaFX application are called is as follows:
 - The **main** method is called first, which creates an instance of the application class and calls the launch method.

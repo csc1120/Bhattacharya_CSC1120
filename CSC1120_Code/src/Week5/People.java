@@ -1,4 +1,4 @@
-package Week5.csc1120;
+package Week5;
 
 public class People {
     private String name;

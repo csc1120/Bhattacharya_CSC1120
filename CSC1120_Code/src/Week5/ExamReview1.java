@@ -1,4 +1,4 @@
-package Week5.csc1120;
+package Week5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class ExamReview1 {
     }
 // return a list of numbers that start with the number 2 using stream
 
-        intList.stream().filter(x -> x.toString().startsWith("2")).forEach(System.out::println);
+        intList.stream().filter(x -> x.toString().startsWith("2")).collect(Collectors.toList());
 
 
 
