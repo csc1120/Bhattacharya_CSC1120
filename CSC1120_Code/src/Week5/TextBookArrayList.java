@@ -171,5 +171,9 @@ public class TextBookArrayList<E> {
         }
         return false;
     }
+    // toArray method
+    public Object[] toArray() {
+        return Arrays.copyOf(theData, size);
+    }
 
 }

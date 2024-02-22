@@ -17,7 +17,9 @@ public class BenchMark_sLL extends Application {
     public static long addToFront_sLLBench(TextBookLinkedList<Integer> intArray, int size) {
         long start = System.nanoTime();
         for (int i = 0; i < size; i++) {
-            intArray.addFirst(i);
+//            intArray.add(i, (int) (Math.random() * size));
+            intArray.addFirst((int) (Math.random() * size));
+            // addFirst method from the TextBookLinkedList class
         }
         long end = System.nanoTime();
         return end - start;
@@ -50,7 +52,7 @@ public class BenchMark_sLL extends Application {
 
         // Call the TextBookArrayList class to create the arraylist
 
-        int[] sizes = {1, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+        int[] sizes = {1, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 150000};
         XYChart.Series<Number, Number> linkedListSeries = new XYChart.Series<>();
         linkedListSeries.setName("Time taken to add elements to the Front of the linked list");
 

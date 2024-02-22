@@ -13,6 +13,8 @@ public class SLL_Demo {
         System.out.println(intSLL.toString());
         intSLL.add(0, 5);
         intSLL.add(1, 6);
+        intSLL.add(2, 7);
+        // call the addNext method
         System.out.println(intSLL.toString());
         intSLL.remove(0);
         System.out.println(intSLL.toString());
@@ -23,6 +25,7 @@ public class SLL_Demo {
         stringSLL.addFirst("Tom");
         stringSLL.addFirst("Jerry");
         stringSLL.addFirst("Spike");
+
 
     }
 }
