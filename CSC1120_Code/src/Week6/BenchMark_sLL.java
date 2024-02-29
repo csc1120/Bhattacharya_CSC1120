@@ -1,5 +1,4 @@
 package Week6;
-import Week6.TextBookLinkedList;
 import Week5.TextBookArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -52,7 +51,7 @@ public class BenchMark_sLL extends Application {
 
         // Call the TextBookArrayList class to create the arraylist
 
-        int[] sizes = {1, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 150000};
+        int[] sizes = {1, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 10000};
         XYChart.Series<Number, Number> linkedListSeries = new XYChart.Series<>();
         linkedListSeries.setName("Time taken to add elements to the Front of the linked list");
 

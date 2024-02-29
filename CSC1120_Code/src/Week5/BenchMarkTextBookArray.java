@@ -16,8 +16,8 @@ public class BenchMarkTextBookArray extends Application {
     @Override
     public void start(Stage stage) {
         long start = System.nanoTime();
-        int[] size = { 100,  1000, 10000 };
-        int runs = 7;
+        int[] size = { 100,  1000, 10000, 100000 };
+        int runs = 2;
 
         // Create the X and Y axes
         NumberAxis xAxis = new NumberAxis();
@@ -136,9 +136,9 @@ public class BenchMarkTextBookArray extends Application {
         long start1 = System.nanoTime();
         for (int i = 0; i < size; i++) {
             // add a random arraylist of Integers to the random index of the arraylist
-            intArray.get(element);
+            intArray.get(-1);
         }
         long end1 = System.nanoTime();
-        return (end1 - start1);
+        return (end1 - start1)*1/1000000000;
     }
 }
