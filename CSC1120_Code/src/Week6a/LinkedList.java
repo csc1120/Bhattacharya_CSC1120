@@ -161,7 +161,14 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E set(int index, E element) {
-        return null;
+        boundsCheck(index);
+        Node<E> walker = head;
+        for (int i = 0; i < index; i++) {
+            walker = walker.next;
+        }
+        E oldValue = walker.value;
+        walker.value = element;
+        return oldValue;
     }
 
     @Override
