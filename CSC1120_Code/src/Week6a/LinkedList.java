@@ -79,6 +79,19 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void add(int index, E element) {
+        if (index < 0 || index > size) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
+        if (index == 0) {
+            addToFront(element);
+        } else {
+            Node<E> walker = head;
+            for (int i = 0; i < index - 1; i++) {
+                walker = walker.next;
+            }
+            walker.next = new Node<>(element, walker.next);
+            size++;
+        }
 
     }
 
