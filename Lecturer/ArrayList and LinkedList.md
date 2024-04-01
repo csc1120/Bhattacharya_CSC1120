@@ -101,3 +101,22 @@ public E remove(int index) {
     return removedElement;
 }
 ```
+## indexOf method
+
+- The indexOf method in LinkedList has a time complexity of O(n) because it requires traversing the list to find the element with the given value.
+- pusedo code:
+```java
+public int indexOf(E element) {
+    // start at the first node
+    Node<E> currentNode = firstNode;
+    // traverse the list until the element is found
+    for (int i = 0; i < size; i++) {
+        if (currentNode.element.equals(element)) {
+            return i;
+        }
+        currentNode = currentNode.next;
+    }
+    // return -1 if the element is not found
+    return -1;
+}
+```

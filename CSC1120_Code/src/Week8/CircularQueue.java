@@ -61,6 +61,7 @@ public class CircularQueue<E> implements PureQueue<E> {
         if (isEmpty) {
             throw new NoSuchElementException("No elements left");
         }
+        // return the item at the front of the queue
         return (E) buffer[frontIndex];
     }
 
@@ -71,5 +72,19 @@ public class CircularQueue<E> implements PureQueue<E> {
 
     public boolean isEmpty() {
         return isEmpty;
+    }
+    // toString method to display the contents of the queue
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = frontIndex; i != backIndex; i = (i + 1) % buffer.length) {
+            sb.append(buffer[i]);
+            if ((i + 1) % buffer.length != backIndex) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }

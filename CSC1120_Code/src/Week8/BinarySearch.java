@@ -13,6 +13,8 @@ public class BinarySearch {
         System.out.println(binarySearchRec(words, "cheese"));
         System.out.println(binarySearchRec(words, "stuff"));
         System.out.println(binarySearchRec(words, "ryan"));
+        System.out.println(binarySearchRec(words, "apple"));
+
     }
 
 
@@ -54,7 +56,7 @@ public class BinarySearch {
         }
         return found;
     }
-
+    // returns the index of the target in the list and boolean if the target is found
 
 }
 

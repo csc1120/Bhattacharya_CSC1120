@@ -5,11 +5,26 @@ public class Recursion {
         System.out.println(factorial(5));
         System.out.println(fibonacci(5));
         System.out.println(gcd(12, 8));
+
+
     }
+    /** Iterative factorial method.
+     pre: n >= 0
+     @param n The integer whose factorial is being computed
+     @return n!
+     */
+    public static int factorialIter(int n) {
+        int result = 1;
+        for (int k = 1; k <= n; k++)
+            result = result * k;
+        return result;
+    }
+
+
 
     public static int factorial(int n) {
         if (n == 0) {
-            return 1;
+            return 2; // base condition
         }
         return n * factorial(n - 1);
     }
@@ -30,5 +45,7 @@ public class Recursion {
         }
         return gcd(b, a % b);
     }
-    // other examples of recursion are the binary search and the palindrome
+
+    // For a given input, determine how many times a recursive method will call itself
+
 }

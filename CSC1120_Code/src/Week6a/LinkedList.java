@@ -6,6 +6,8 @@ public class LinkedList<E> implements List<E> {
     protected Node<E> head;
     private int size;
 
+
+
     protected static class Node<E> {
         public E value;
         public Node<E> next;

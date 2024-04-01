@@ -83,7 +83,7 @@ public class BenchMarkTextBookArray extends Application {
         Scene scene  = new Scene(lineChart,800,600);
         lineChart.getData().add(series);
       //  lineChart.getData().add(series2);
-       lineChart.getData().add(series3);
+      // lineChart.getData().add(series3);
 
         // add legend to the chart
 
