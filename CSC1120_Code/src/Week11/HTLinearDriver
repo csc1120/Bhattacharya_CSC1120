@@ -1,0 +1,20 @@
+package Week11;
+
+public class HTLinearDriver {
+    public static void main(String[] args) {
+HashTableChain<String, Integer> st = new HashTableChain<String, Integer>();
+            st.put("Arnold", 1);
+            st.put("John", 2);
+            st.put("Gio", 3);
+            st.put("Arnold", 4);
+
+            // print keys
+        System.out.println("Keys:");
+        for (String s : st.keys()){
+            System.out.println(s + " " + st.get(s));
+        }
+
+            }
+        }
+
+
