@@ -34,15 +34,15 @@ public class MergeSort {
 
     private static void merge(int arr[], int lower, int upper) {
         int m = (lower + upper) / 2;
-        int a[] = new int[m - lower + 1];
-        int b[] = new int[upper - m];
-        int i, k = 0, k1 = 0, k2 = 0;
-        for (i = lower; i <= m; i++, k++)
+        int a[] = new int[m - lower + 1]; // left array
+        int b[] = new int[upper - m]; // right array
+        int i, k = 0, k1 = 0, k2 = 0; // k1 and k2 are the indices of the left and right arrays
+        for (i = lower; i <= m; i++, k++) // copying the elements to the left array
             a[k] = arr[i];
         k = 0;
-        for (; i <= upper; i++, k++)
+        for (; i <= upper; i++, k++) // copying the elements to the right array
             b[k] = arr[i];
-        for (i = lower; i <= upper && k1 < m - lower + 1 && k2 < upper - m; i++) {
+        for (i = lower; i <= upper && k1 < m - lower + 1 && k2 < upper - m; i++) { // merging the left and right arrays
             if (a[k1] < b[k2]) {
                 arr[i] = a[k1];
                 k1++;
@@ -51,7 +51,7 @@ public class MergeSort {
                 k2++;
             }
         }
-        for (; k1 < m - lower + 1; k1++)
+        for (; k1 < m - lower + 1; k1++) // copying the remaining elements of the left array
             arr[i++] = a[k1];
         for (; k2 < upper - m; k2++)
             arr[i++] = b[k2];
