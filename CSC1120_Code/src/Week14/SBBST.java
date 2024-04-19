@@ -10,8 +10,7 @@ package Week14;
             BinarySearchTree bst = new BinarySearchTree();
             AVLTree avl = new AVLTree();
             // unbalanced keys
-           // int[] keys = {10, 20, 30, 40, 50, 60};
-            int[] keys = {5,9, 6,15,11,16,10,13};
+            int[] keys = {10, 20, 30, 40, 50, 60};
 
             for (int key : keys) {
                 bst.insert(key);

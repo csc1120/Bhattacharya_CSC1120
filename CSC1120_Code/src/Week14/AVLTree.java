@@ -45,7 +45,7 @@ class AVLTree {
         return x;
     }
 
-    // A utility function to left rotate subtree rooted with x
+    // function to left rotate subtree rooted with x
     AVLNode leftRotate(AVLNode x) {
         AVLNode y = x.right;
         AVLNode T2 = y.left;
